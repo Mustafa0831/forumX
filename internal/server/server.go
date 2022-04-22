@@ -34,7 +34,7 @@ func (s *Server) Start() error {
 
 	fmt.Println("Server is working on port :3000 ...")
 	fmt.Println(s.config.WebPort)
-	return http.ListenAndServe(s.config.WebPort, s.mux.Mux)
+	return http.ListenAndServe(":"+s.config.WebPort, s.mux.Mux)
 
 }
 
