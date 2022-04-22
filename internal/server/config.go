@@ -11,9 +11,9 @@ type Config struct {
 }
 
 // NewConfig generates configurations for the Server
-func NewConfig() *Config {
+func NewConfig(port *string) *Config {
 	return &Config{
-		WebPort:  ":8080",
+		WebPort:  *port,
 		Database: database.NewConfig(),
 	}
 }

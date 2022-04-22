@@ -32,7 +32,7 @@ func (s *Server) Start() error {
 	}
 	s.ConfigureRouter()
 
-	fmt.Println("Server is working on port :8080 ...")
+	fmt.Println("Server is working on port :3000 ...")
 
 	return http.ListenAndServe(s.config.WebPort, s.mux.Mux)
 

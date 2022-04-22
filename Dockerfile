@@ -10,7 +10,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -v cmd/app/main.go
+RUN go build -v cmd/app/main.goq
 
 # Run the binary program produced by `go install`
 CMD ["./main"]

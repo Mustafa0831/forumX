@@ -1,15 +1,22 @@
 package main
 
 import (
-	"log"
-
 	"forum/internal/server"
+	"log"
+	"os"
 
+	"github.com/joho/godotenv"
 	_ "github.com/mattn/go-sqlite3" // SQLite driver
 )
 
 func main() {
-	config := server.NewConfig() // generating config for server
+
+	godotenv.Load("cmd/app/.env")
+
+	port := os.Getenv("PORT")
+	// fmt.Println(fmt.Sprintf("%s:%s", "0.0.0.0", port))
+
+	config := server.NewConfig(&port)
 	server := server.New(config) // creating new instance based on the 'config'
 	// Starting the Server
 	if err := server.Start(); err != nil {
