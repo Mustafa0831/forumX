@@ -9,6 +9,7 @@ COPY go.sum .
 RUN go mod download
 COPY . .
 
+
 # Build the Go app
 RUN go build -v cmd/app/main.goq
 

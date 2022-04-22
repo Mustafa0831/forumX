@@ -16,8 +16,9 @@ func main() {
 	port := os.Getenv("PORT")
 	// fmt.Println(fmt.Sprintf("%s:%s", "0.0.0.0", port))
 	if port == "" {
-		port = ":3000"
+		port = ":3001"
 	}
+	log.Println(port, "PORT skr")
 	config := server.NewConfig(&port)
 	server := server.New(config) // creating new instance based on the 'config'
 	// Starting the Server
