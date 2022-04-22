@@ -34,7 +34,7 @@ func (s *Server) Start() error {
 
 	fmt.Println("Server is working on port :3000 ...")
 	fmt.Println(s.config.WebPort)
-	return http.ListenAndServe(s.config.WebPort, s.mux.Mux)
+	return http.ListenAndServe(":"+s.config.WebPort, s.mux.Mux)
 
 }
 
@@ -51,7 +51,6 @@ func (s *Server) ConfigureRouter() {
 	s.mux.Mux.HandleFunc("/post", s.mux.PostView())
 	s.mux.Mux.HandleFunc("/rate", s.mux.RateHandler())
 	s.mux.Mux.HandleFunc("/filter", s.mux.FilterHandler())
-	return
 }
 
 // ConfigureDB ...
