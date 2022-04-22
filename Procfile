@@ -1,1 +1,1 @@
-web: bin/forumx
+web: bin/cmd/app
